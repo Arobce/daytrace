@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DayTrace – Tray menu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#16191F}a:hover{color:#000000}
+</style>
+</helmet>
+<div style="width: 520px; height: 520px; box-sizing: border-box; padding: 24px; background: #DCE1E8; font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif; color: #16191F; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; gap: 12px">
+
+  <div role="menu" aria-label="DayTrace" style="width: 260px; box-sizing: border-box; padding: 4px; background: #FBFBFB; border: 1px solid #D4D8DF; border-radius: 8px; box-shadow: 0 8px 24px rgba(22,25,31,0.16); display: flex; flex-direction: column; font-size: 13px">
+    <button type="button" role="menuitem" style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; border: 0; border-radius: 4px; background: #ECEEF2; color: #16191F; font: inherit; font-weight: 600; text-align: left">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M3 13V8M8 13V3M13 13V6"></path></svg>Open dashboard</button>
+    <div role="menuitem" aria-disabled="true" style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; color: #5B6270">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M8 4.5V8l2.5 1.5"></path></svg>Today: 7h 48m</div>
+    <div role="separator" style="height: 1px; margin: 4px 6px; background: #E3E6EB"></div>
+    <div style="position: relative">
+      <button type="button" role="menuitem" aria-haspopup="true" aria-expanded="true" style="display: flex; align-items: center; gap: 10px; width: 100%; height: 34px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M6 4v8M10 4v8"></path></svg>
+        <span style="flex-grow: 1">Pause tracking</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4.5 3l3 3-3 3"></path></svg>
+      </button>
+      <div role="menu" aria-label="Pause tracking" style="position: absolute; right: calc(100% + 4px); top: -4px; width: 170px; box-sizing: border-box; padding: 4px; background: #FBFBFB; border: 1px solid #D4D8DF; border-radius: 8px; box-shadow: 0 8px 24px rgba(22,25,31,0.16); display: flex; flex-direction: column">
+        <button type="button" role="menuitem" style="height: 32px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">For 15 minutes</button>
+        <button type="button" role="menuitem" style="height: 32px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">For 1 hour</button>
+        <button type="button" role="menuitem" style="height: 32px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">Until I resume</button>
+      </div>
+    </div>
+    <div role="separator" style="height: 1px; margin: 4px 6px; background: #E3E6EB"></div>
+    <button type="button" role="menuitemcheckbox" aria-checked="true" style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"></path></svg>Start with Windows</button>
+    <button type="button" role="menuitem" style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5h4l1.5 1.5H14v6.5H2z"></path></svg>Open data folder</button>
+    <div role="separator" style="height: 1px; margin: 4px 6px; background: #E3E6EB"></div>
+    <button type="button" role="menuitem" style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; border: 0; border-radius: 4px; background: transparent; color: #16191F; font: inherit; text-align: left">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"></path></svg>Exit DayTrace</button>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 10px">
+    <span style="padding: 6px 10px; background: #FBFBFB; border: 1px solid #D4D8DF; border-radius: 6px; font-size: 12px; box-shadow: 0 4px 12px rgba(22,25,31,0.12)">DayTrace · 7h 48m today · Code</span>
+    <div style="display: flex; gap: 6px; padding: 6px; border-radius: 8px; background: #EEF1F4">
+      <div title="Tracking" style="width: 32px; height: 32px; border-radius: 6px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+        <svg width="20" height="20" viewBox="0 0 28 28" role="img" aria-label="DayTrace tracking"><rect width="28" height="28" rx="7" fill="#16191F"></rect><path d="M6 15h4l2-6 3 10 2-6h5" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+      <div title="Paused" style="width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; position: relative">
+        <svg width="20" height="20" viewBox="0 0 28 28" role="img" aria-label="DayTrace paused"><rect width="28" height="28" rx="7" fill="#9AA1AC"></rect><path d="M6 15h4l2-6 3 10 2-6h5" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="22" cy="22" r="6" fill="#E39B3A" stroke="#EEF1F4" stroke-width="1.5"></circle><path d="M20.5 19.5v5M23.5 19.5v5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      </div>
+    </div>
+  </div>
+  <span style="font-size: 12px; color: #3B414C">Tray icon: tracking (left) and paused (right)</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":520,"height":520}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

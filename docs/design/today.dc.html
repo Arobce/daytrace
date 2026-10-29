@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DayTrace – Today</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#16191F;text-decoration:none}a:hover{color:#000000}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; background: #F5F6F8; color: #16191F; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-variant-numeric: tabular-nums">
+
+  <nav aria-label="Main" style="flex: 1 1 232px; box-sizing: border-box; padding: 24px 16px; background: #FFFFFF; border-right: 1px solid #E3E6EB; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#16191F"></rect><path d="M6 15h4l2-6 3 10 2-6h5" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span style="font-weight: 600; font-size: 17px">DayTrace</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <a href="today.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 8px; font-size: 14px; font-weight: 600; background: #ECEEF2; color: #16191F">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="7"></circle><path d="M9 5v4l3 2"></path></svg>Today</a>
+      <a href="week.dc.html" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 8px; font-size: 14px; color: #3B414C">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 15V9M9 15V4M14 15V7"></path></svg>Week</a>
+      <a href="apps.dc.html" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 8px; font-size: 14px; color: #3B414C">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="10.5" y="2.5" width="5" height="5" rx="1"></rect><rect x="2.5" y="10.5" width="5" height="5" rx="1"></rect><rect x="10.5" y="10.5" width="5" height="5" rx="1"></rect></svg>Apps &amp; Categories</a>
+      <a href="settings.dc.html" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 12px; border-radius: 8px; font-size: 14px; color: #3B414C">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 13h14"></path><circle cx="6" cy="5" r="2" fill="#FFFFFF"></circle><circle cx="12" cy="13" r="2" fill="#FFFFFF"></circle></svg>Settings</a>
+    </div>
+    <div style="flex-grow: 1"></div>
+    <div style="display: flex; align-items: center; gap: 10px; padding: 12px; border: 1px solid #E3E6EB; border-radius: 10px; background: #F5F6F8">
+      <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #2F9E6E; flex-shrink: 0"></span>
+      <div style="display: flex; flex-direction: column; min-width: 0">
+        <span style="font-size: 12px; font-weight: 600">Tracking</span>
+        <span style="font-size: 12px; color: #5B6270; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Visual Studio Code · 23m</span>
+      </div>
+    </div>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 32px 40px 48px">
+    <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+
+      <header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <h1 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.01em">Today</h1>
+          <p style="margin: 0; font-size: 14px; color: #5B6270">Wednesday, October 28, 2026</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px">
+          <button type="button" aria-label="Previous day" style="width: 44px; height: 44px; border: 1px solid #E3E6EB; border-radius: 8px; background: #FFFFFF; color: #16191F; font: inherit; font-size: 18px; cursor: pointer">‹</button>
+          <button type="button" style="height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 8px; border: 1px solid #E3E6EB; border-radius: 8px; background: #FFFFFF; color: #16191F; font: inherit; font-size: 14px; cursor: pointer">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="2"></rect><path d="M2 7h12M5 1.5v3M11 1.5v3"></path></svg>Oct 28, 2026</button>
+          <button type="button" aria-label="Next day" disabled="" style="width: 44px; height: 44px; border: 1px solid #E3E6EB; border-radius: 8px; background: #F5F6F8; color: #9AA1AC; font: inherit; font-size: 18px">›</button>
+        </div>
+      </header>
+
+      <section aria-label="Summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+        <div style="background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">Active time</span>
+          <span style="font-size: 32px; font-weight: 600; letter-spacing: -0.02em">7h 48m</span>
+          <span style="font-size: 13px; color: #5B6270">08:42 – 18:10 · 1h 40m away</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">Productivity score</span>
+          <span style="font-size: 32px; font-weight: 600; letter-spacing: -0.02em">84<span style="font-size: 16px; font-weight: 500; color: #5B6270"> / 100</span></span>
+          <div aria-hidden="true" style="display: flex; height: 6px; border-radius: 3px; overflow: hidden; gap: 2px; margin-top: 4px">
+            <div style="width: 58%; background: #2F9E6E"></div>
+            <div style="width: 31%; background: #C8CDD4"></div>
+            <div style="width: 11%; background: #E0654F"></div>
+          </div>
+          <span style="font-size: 13px; color: #5B6270">4h 32m productive · 52m distracting</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">Longest focus</span>
+          <span style="font-size: 32px; font-weight: 600; letter-spacing: -0.02em">1h 47m</span>
+          <span style="font-size: 13px; color: #5B6270">Visual Studio Code · 10:04 – 11:51</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">App switches</span>
+          <span style="font-size: 32px; font-weight: 600; letter-spacing: -0.02em">186</span>
+          <span style="font-size: 13px; color: #5B6270">About 24 per active hour</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="tl-h" style="background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+          <h2 id="tl-h" style="margin: 0; font-size: 16px; font-weight: 600">Timeline</h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: #3B414C">
+            <sc-for list="{{categories}}" as="c" hint-placeholder-count="7">
+              <span style="display: flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 3px; background: {{c.color}}"></span>{{c.name}}</span>
+            </sc-for>
+            <span style="display: flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 3px; background: repeating-linear-gradient(135deg, #C8CDD4 0 2px, #F5F6F8 2px 4px)"></span>Away</span>
+          </div>
+        </div>
+        <div style="position: relative; padding-bottom: 26px">
+          <div role="img" aria-label="Day timeline from 08:42 to 18:10, mostly Productive with away periods at lunch and late afternoon" style="position: relative; height: 56px; border-radius: 8px; background: #F5F6F8; overflow: hidden">
+            <sc-for list="{{blocks}}" as="b" hint-placeholder-count="20">
+              <div title="{{b.label}}" style="position: absolute; top: 0; bottom: 0; left: {{b.left}}; width: {{b.width}}; background: {{b.bg}}; box-shadow: inset -1px 0 0 #FFFFFF"></div>
+            </sc-for>
+          </div>
+          <sc-for list="{{ticks}}" as="t" hint-placeholder-count="12">
+            <span style="position: absolute; bottom: 0; left: {{t.left}}; transform: translateX(-50%); font-size: 11px; color: #5B6270">{{t.label}}</span>
+          </sc-for>
+          <sc-if value="{{showHover}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; top: 64px; left: 18.8%; z-index: 2; width: 260px; box-sizing: border-box; padding: 12px 14px; background: #16191F; color: #FFFFFF; border-radius: 10px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 8px 24px rgba(22,25,31,0.18)">
+              <span style="font-size: 13px; font-weight: 600">Visual Studio Code</span>
+              <span style="font-size: 12px; color: #C8CDD4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">SessionRecorder.cs — daytrace</span>
+              <span style="font-size: 12px; color: #E3E6EB">10:04 – 11:51 · 1h 47m</span>
+              <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #E3E6EB"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 2px; background: #2F9E6E"></span>Productive</span>
+            </div>
+          </sc-if>
+        </div>
+      </section>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+        <section aria-labelledby="cat-h" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+          <h2 id="cat-h" style="margin: 0; font-size: 16px; font-weight: 600">By category</h2>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <sc-for list="{{categories}}" as="c" hint-placeholder-count="7">
+              <button type="button" style="display: flex; flex-direction: column; gap: 6px; width: 100%; min-height: 44px; padding: 8px 8px; border: 0; border-radius: 8px; background: transparent; color: #16191F; font: inherit; text-align: left; cursor: pointer">
+                <span style="display: flex; align-items: center; gap: 8px; width: 100%; font-size: 14px">
+                  <span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 3px; background: {{c.color}}; flex-shrink: 0"></span>
+                  <span style="flex-grow: 1">{{c.name}}</span>
+                  <span style="font-weight: 500">{{c.time}}</span>
+                  <span style="width: 36px; text-align: right; font-size: 13px; color: #5B6270">{{c.pct}}</span>
+                </span>
+                <span aria-hidden="true" style="display: block; width: 100%; height: 4px; border-radius: 2px; background: #F0F1F4"><span style="display: block; height: 4px; border-radius: 2px; width: {{c.bar}}; background: {{c.color}}"></span></span>
+              </button>
+            </sc-for>
+          </div>
+        </section>
+
+        <section aria-labelledby="apps-h" style="flex: 2 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+            <h2 id="apps-h" style="margin: 0; font-size: 16px; font-weight: 600">Top apps</h2>
+            <span style="font-size: 13px; color: #5B6270">9 apps today</span>
+          </div>
+          <div style="overflow-x: auto">
+            <table style="width: 100%; min-width: 520px; border-collapse: collapse; font-size: 14px">
+              <thead>
+                <tr style="text-align: left; font-size: 12px; color: #5B6270">
+                  <th scope="col" style="padding: 8px 8px; font-weight: 500; border-bottom: 1px solid #E3E6EB">App</th>
+                  <th scope="col" style="padding: 8px 8px; font-weight: 500; border-bottom: 1px solid #E3E6EB">Category</th>
+                  <th scope="col" style="padding: 8px 8px; font-weight: 500; border-bottom: 1px solid #E3E6EB; text-align: right">Time</th>
+                  <th scope="col" style="padding: 8px 8px; font-weight: 500; border-bottom: 1px solid #E3E6EB; text-align: right">Sessions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{apps}}" as="a" hint-placeholder-count="9">
+                  <tr>
+                    <td style="padding: 10px 8px; border-bottom: 1px solid #F0F1F4; vertical-align: top">
+                      <div style="display: flex; flex-direction: column; gap: 2px">
+                        <span style="font-weight: 500">{{a.name}}</span>
+                        <span style="font-size: 12px; color: #5B6270">{{a.exe}}</span>
+                        <sc-if value="{{a.split}}" hint-placeholder-val="{{ false }}">
+                          <span style="font-size: 12px; color: #5B6270">{{a.split}}</span>
+                        </sc-if>
+                      </div>
+                    </td>
+                    <td style="padding: 10px 8px; border-bottom: 1px solid #F0F1F4; vertical-align: top">
+                      <button type="button" aria-label="Change category for {{a.name}}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border: 1px solid #E3E6EB; border-radius: 999px; background: #FFFFFF; color: #16191F; font: inherit; font-size: 13px; cursor: pointer">
+                        <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: {{a.color}}"></span>{{a.cat}}
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#5B6270" stroke-width="1.5" aria-hidden="true"><path d="M3 4.5l3 3 3-3"></path></svg>
+                      </button>
+                    </td>
+                    <td style="padding: 10px 8px; border-bottom: 1px solid #F0F1F4; text-align: right; vertical-align: top; font-weight: 500">{{a.time}}</td>
+                    <td style="padding: 10px 8px; border-bottom: 1px solid #F0F1F4; text-align: right; vertical-align: top; color: #5B6270">{{a.sessions}}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showHover":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var C = {
+      P: { name: 'Productive', color: '#2F9E6E' },
+      C: { name: 'Communication', color: '#3B7DD8' },
+      B: { name: 'Browsing', color: '#8A7FD1' },
+      E: { name: 'Entertainment', color: '#E0654F' },
+      S: { name: 'Social', color: '#E39B3A' },
+      Y: { name: 'System', color: '#9AA1AC' },
+      U: { name: 'Uncategorized', color: '#C8CDD4' }
+    };
+    var t0 = 480, span = 660;
+    function pos(m) { return ((m - t0) / span * 100).toFixed(3) + '%'; }
+    function wid(a, b) { return ((b - a) / span * 100).toFixed(3) + '%'; }
+    function hhmm(m) { var h = Math.floor(m / 60), mm = m % 60; return (h < 10 ? '0' : '') + h + ':' + (mm < 10 ? '0' : '') + mm; }
+    var hatch = 'repeating-linear-gradient(135deg, #C8CDD4 0 3px, #F5F6F8 3px 7px)';
+    var segs = [
+      [522, 538, 'C'], [538, 546, 'Y'], [546, 598, 'P'], [598, 604, 'C'], [604, 711, 'P'],
+      [711, 728, 'B'], [728, 750, 'C'], [750, 800, 'idle'], [800, 826, 'E'], [826, 840, 'S'],
+      [840, 905, 'P'], [905, 925, 'C'], [925, 940, 'locked'], [940, 975, 'P'], [975, 987, 'E'],
+      [987, 1004, 'B'], [1004, 1024, 'C'], [1024, 1059, 'idle'], [1059, 1064, 'U'], [1064, 1076, 'B'],
+      [1076, 1089, 'P'], [1089, 1090, 'Y']
+    ];
+    var blocks = segs.map(function (s) {
+      var away = s[2] === 'idle' || s[2] === 'locked';
+      var label = (away ? 'Away (' + s[2] + ')' : C[s[2]].name) + ' · ' + hhmm(s[0]) + '–' + hhmm(s[1]);
+      return { left: pos(s[0]), width: wid(s[0], s[1]), bg: away ? hatch : C[s[2]].color, label: label };
+    });
+    var ticks = [];
+    for (var h = 8; h <= 19; h++) ticks.push({ left: pos(h * 60), label: (h < 10 ? '0' : '') + h + ':00' });
+    var cats = [
+      ['P', '4h 32m', 58], ['C', '1h 24m', 18], ['B', '46m', 10], ['E', '38m', 8],
+      ['S', '14m', 3], ['Y', '9m', 2], ['U', '5m', 1]
+    ].map(function (r) {
+      return { name: C[r[0]].name, color: C[r[0]].color, time: r[1], pct: r[2] + '%', bar: (r[2] / 58 * 100).toFixed(1) + '%' };
+    });
+    var apps = [
+      ['Visual Studio Code', 'code.exe', 'P', '3h 05m', 58, ''],
+      ['Google Chrome', 'chrome.exe', 'B', '1h 52m', 64, 'Split by title rules: 46m Browsing · 38m Entertainment · 14m Social · 14m Productive'],
+      ['Slack', 'slack.exe', 'C', '1h 02m', 71, ''],
+      ['Windows Terminal', 'windowsterminal.exe', 'P', '41m', 33, ''],
+      ['Notion', 'notion.exe', 'P', '22m', 9, ''],
+      ['Outlook', 'olk.exe', 'C', '22m', 14, ''],
+      ['Figma', 'figma.exe', 'P', '10m', 4, ''],
+      ['File Explorer', 'explorer.exe', 'Y', '9m', 22, ''],
+      ['Paint.NET', 'paintdotnet.exe', 'U', '5m', 2, '']
+    ].map(function (r) {
+      return { name: r[0], exe: r[1], cat: C[r[2]].name, color: C[r[2]].color, time: r[3], sessions: r[4], split: r[5] };
+    });
+    return {
+      showHover: this.props.showHover ?? true,
+      categories: cats,
+      blocks: blocks,
+      ticks: ticks,
+      apps: apps
+    };
+  }
+}
+</script>
+</body>
+</html>
